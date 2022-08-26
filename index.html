@@ -4,30 +4,68 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock-Paper-Scissors!</title>
+  <title>Rock, Paper, Scissors!</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div id="game-container">
-    <h1>Rock-Paper-Scissors!</h1>
+    <h1>Rock, Paper, Scissors!</h1>
     <p>Current score:</p>
-    <!--<p>User: 0</p>
-    <p>Computer: 0</p>
-    <p>The user chose rock.</p>
-    <p>The computer chose paper.</p>
-    <p>The computer won!</p>-->
+    <p id="userScore">User: 0</p>
+    <p id="computerScore">Computer: 0</p>
+    <p id="userChoice" onclick ="functionRock">The user chose</p>
+    <p id="computerChoice">The computer chose</p>
+    <p id="gameResults">The computer won!</p>
     <div class="images-container">
-      <div id="rock">
-        <img src="images/rock-hand.png" alt="rock">
+      <div id="rock" value="1">
+        <img class="choice" src="images/rock-hand.png" alt="rock">
       </div>
-      <div id="paper">
-        <img src="images/paper-hand.png" alt="paper">
+      <div id="paper" value="1">
+        <img class="choice" src="images/paper-hand.png" alt="paper">
       </div>
-      <div id="scissors">
-        <img src="images/scissors-hand.png" alt="scissors">
+      <div id="scissors" value="1">
+        <img class="choice" src="images/scissors-hand.png" alt="scissors">
       </div>
     </div>
     <script src="script.js"></script>
   </div>
 </body>
 </html>
+
+<!--PSEUDOCODE
+User can select a rock, paper or scissors
+
+When a user selects rock, paper or scissors the screen will display:
+  -what the computer player has chosen
+  -whether they have won or lost that game
+
+The user can play as many times as they want
+
+A score of total wins and losses will be displayed on the screen
+
+LOGIC
+
+User score starts in 0
+Computer score starts in 0
+Once the player choses, print "The user chose <choice>"
+Then, the computer chose <the computer pick a random choice>
+and print "The user chose <choice>"
+Compare both choices
+Print the result "The <player> won!"
+Add user point.
+If it's a tie computer will print ("It was a tie") and no points will be added to the score
+
+Create an array with the options for choices
+User vs Computer
+rock + scissors = (rock wins) user wins
+rock + paper = (paper wins) computer wins
+rock + rock = (it's a tie!) no one wins
+paper + scissors = (scissors win) computer wins
+paper + paper = (it's a tie!) no one wins
+paper + rock = (paper wins) user wins
+scissors + scissors = (it's a tie!) no one wins
+scissors + paper = (scissors win) user wins
+scissors + rock = (rock wins) computer wins
+
+
+-->
