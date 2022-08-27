@@ -1,35 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rock, Paper, Scissors!</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div id="game-container">
-    <h1>Rock, Paper, Scissors!</h1>
-    <p>Current score:</p>
-    <p id="userScore">User: 0</p>
-    <p id="compScore">Computer: 0</p>
-    <p id="userChoice" onclick ="functionRock">The user chose</p>
-    <p id="compChoice">The computer chose</p>
-    <p id="gameResults">The computer won!</p>
-    <div id = "rdmChoice" class="images-container">
-      <div id="rock" class="choice" value="1">
-        <img class="choice" src="images/rock-hand.png" alt="rock">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock, Paper, Scissors!</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="game-container">
+      <h1>Rock, Paper, Scissors!</h1>
+      <p>Current score:</p>
+      <p id="userScore">User: 0</p>
+      <p id="compScore">Computer: 0</p>
+      <p id="userChoice"></p>
+      <p id="compChoice"></p>
+      <p id="gameResults"></p>
+      <div id="rdmChoice" class="images-container"> <!--id="rdmChoice" needs to be fixed-->
+        <div>
+          <img 
+            id="rock"
+            class="choice"
+            value="1"
+            src="images/rock-hand.png"
+            alt="rock"
+          />
+        </div>
+        <div>
+          <img
+            id="paper"
+            class="choice"
+            value="1"
+            src="images/paper-hand.png"
+            alt="paper"
+          />
+        </div>
+        <div>
+          <img
+            id="scissors"
+            class="choice"
+            value="1"
+            src="images/scissors-hand.png"
+            alt="scissors"
+          />
+        </div>
       </div>
-      <div id="paper" class="choice" value="1">
-        <img src="images/paper-hand.png" alt="paper">
-      </div>
-      <div id="scissors" class="choice" value="1">
-        <img src="images/scissors-hand.png" alt="scissors">
-      </div>
+      <script src="script.js"></script>
     </div>
-    <script src="script.js"></script>
-  </div>
-</body>
+  </body>
 </html>
 
 <!--PSEUDOCODE
@@ -43,16 +61,39 @@ The user can play as many times as they want
 
 A score of total wins and losses will be displayed on the screen
 
+PSEUDOCODE
+
+DECLARE a variable to hold the user's choice.
+DECLARE a variable to hold the computer's choice.
+COMPARE user's choice and computer's choice.
+IF the choice is:
+  User vs Computer
+  rock && scissors = (rock wins) user wins
+  rock && paper = (paper wins) computer wins
+  rock && rock = (it's a tie!) no one wins
+  paper + scissors = (scissors win) computer wins
+  paper + paper = (it's a tie!) no one wins
+  paper + rock = (paper wins) user wins
+  scissors + scissors = (it's a tie!) no one wins
+  scissors + paper = (scissors win) user wins
+  scissors + rock = (rock wins) computer wins
+IF the user won
+  ADD a +1 point to the user's score
+IF the computer won
+  ADD a +1 point to the computer's score
+IF it was a tie
+  DON'T add any points to the players
+
 LOGIC
 
 User score starts in 0
 Computer score starts in 0
-Once the player choses, print "The user chose <choice>"
+Once the user choses, print ("The user chose <choice>)"
 Then, the computer chose <the computer pick a random choice>
-and print "The user chose <choice>"
+and print ("The user chose <choice>")
 Compare both choices
-Print the result "The <player> won!"
-Add user point.
+Print the result ("The <player> won!")
+Add user or computer a point.
 If it's a tie computer will print ("It was a tie") and no points will be added to the score
 
 Create an array with the options for choices
