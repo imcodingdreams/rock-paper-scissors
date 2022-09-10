@@ -2,42 +2,45 @@ const choices = document.querySelectorAll(".choices");
 
 choices.forEach((choices) => {
   choices.addEventListener("click", function () {
-    const userChoice = document.getElementById("userChoice");
-    document.getElementById("userChoice").innerText = `User chose ${userChoice}`;
-
+    const userChoice = this.id;
+    document.getElementById("userChoice").innerText = `You chose ${userChoice}`;
     const compOptions = ["rock", "paper", "scissors"];
     const compChoice = compOptions[Math.floor(Math.random() * 3)];
-    document.getElementById("compChoice").innerText = `Computer chose ${compChoice}`;
+    document.getElementById(
+      "compChoice"
+    ).innerText = `Computer chose ${compChoice}`;
+    // const compScore = document.getElementById("compScore").innerText = `Computer: ${}`;
+    compareInputs(this.id, compChoice);
   });
 });
 
-// const currentUserChoice = `User chose ${userChoice}`;
-// const currentCompChoice = `Computer chose ${compChoice}`;
-
-//  Comparison
-const compareChoices = (userChoice, compChoice) => {
+function compareInputs(userChoice, compChoice) {
   // Tie
   if (userChoice === compChoice) {
-    return gameResults.innerText = "It's a tie!";
+    return (gameResults.innerText = "It's a tie!");
   }
   // Rock
   if (userChoice === "rock") {
     if (compChoice === "scissors") {
-      return gameResults.innerText = "You won!";
+      return (gameResults.innerText = "You won!");
     } else {
-      return gameResults.innerText = "The computer won!";
+      return (gameResults.innerText = "The computer won!");
     }
   }
-};
-  if (userChoice === "paper" && compChoice === "rock") {
-    gameResults.innerText = "You won!";
-  } else {
-    return gameResults.innerText = "The computer won!";
+  // Paper
+  else if (userChoice === "paper") {
+    if (compChoice === "rock") {
+      return (gameResults.innerText = "You won!");
+    } else {
+      return (gameResults.innerText = "The computer won!");
+    }
   }
   // Scissors
-  if (userChoice === "scissors" && compChoice === "paper") {
-    gameResults.innerText = "You won!";
-  } else {
-    return gameResults.innerText = "The computer won!";
+  else if (userChoice === "scissors") {
+    if (compChoice === "paper") {
+      return (gameResults.innerText = "You won!");
+    } else {
+      return (gameResults.innerText = "The computer won!");
+    }
   }
-};
+}
