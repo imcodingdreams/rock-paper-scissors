@@ -11,16 +11,17 @@
     <div id="game-container">
       <h1>Rock, Paper, Scissors!</h1>
       <p>Current score:</p>
-      <p id="userScore">User: 0</p>
+      <p id="userScore">You: 0</p>
       <p id="compScore">Computer: 0</p>
       <p id="userChoice"></p>
       <p id="compChoice"></p>
       <p id="gameResults"></p>
-      <div id="rdmChoice" class="images-container"> <!--id="rdmChoice" needs to be fixed-->
+      <div id="rdmChoice" class="images-container">
+        <!--id="rdmChoice" needs to be fixed-->
         <div>
-          <img 
+          <img
             id="rock"
-            class="choice"
+            class="choices"
             value="1"
             src="images/rock-hand.png"
             alt="rock"
@@ -29,7 +30,7 @@
         <div>
           <img
             id="paper"
-            class="choice"
+            class="choices"
             value="1"
             src="images/paper-hand.png"
             alt="paper"
@@ -38,14 +39,14 @@
         <div>
           <img
             id="scissors"
-            class="choice"
+            class="choices"
             value="1"
             src="images/scissors-hand.png"
             alt="scissors"
           />
         </div>
       </div>
-      <script src="script.js"></script>
+      <script src="script3.js"></script>
     </div>
   </body>
 </html>
@@ -65,12 +66,15 @@ PSEUDOCODE
 
 DECLARE a variable to hold the user's choice.
 DECLARE a variable to hold the computer's choice.
+DECLARE a variable to hold the user's score.
+DECLARE a variable to hold the computer's score.
+DECLARE a variable to hold who won.
 COMPARE user's choice and computer's choice.
 IF the choice is:
   User vs Computer
-  rock && scissors = (rock wins) user wins
-  rock && paper = (paper wins) computer wins
-  rock && rock = (it's a tie!) no one wins
+  rock + scissors = (rock wins) user wins
+  rock + paper = (paper wins) computer wins
+  rock + rock = (it's a tie!) no one wins
   paper + scissors = (scissors win) computer wins
   paper + paper = (it's a tie!) no one wins
   paper + rock = (paper wins) user wins
@@ -95,18 +99,5 @@ Compare both choices
 Print the result ("The <player> won!")
 Add user or computer a point.
 If it's a tie computer will print ("It was a tie") and no points will be added to the score
-
-Create an array with the options for choices
-User vs Computer
-rock + scissors = (rock wins) user wins
-rock + paper = (paper wins) computer wins
-rock + rock = (it's a tie!) no one wins
-paper + scissors = (scissors win) computer wins
-paper + paper = (it's a tie!) no one wins
-paper + rock = (paper wins) user wins
-scissors + scissors = (it's a tie!) no one wins
-scissors + paper = (scissors win) user wins
-scissors + rock = (rock wins) computer wins
-
 
 -->

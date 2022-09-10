@@ -10,7 +10,7 @@ body {
   align-items: center;
   text-align: center;
   margin-top: 50px;
-  font-family: monospace, 'Courier New', Courier;
+  font-family: monospace, "Courier New", Courier;
   font-size: 18px;
 }
 
@@ -29,4 +29,9 @@ body {
 
 img {
   height: 100px;
+  transition: 100ms;
+}
+
+img:hover {
+  transform: scale(1.2);
 }
