@@ -2,6 +2,7 @@ const choices = document.querySelectorAll(".choices");
 let score = 0;
 let userScore = 0;
 let compScore = 0;
+let winner;
 
 choices.forEach((choices) => {
   choices.addEventListener("click", function() {
@@ -15,6 +16,7 @@ choices.forEach((choices) => {
 });
 
 function compareInputs(userChoice, compChoice) {
+  // Tie
   if (userChoice === compChoice) {
     return gameResults.innerText = "It's a tie!";
   }
@@ -30,10 +32,12 @@ function compareInputs(userChoice, compChoice) {
     }
   } else if (userChoice === "paper") {
     if (compChoice === "rock") {
+      winner = user
       userScore++;
       document.getElementById("userScore").innerText = `You: ${userScore}`;
       return gameResults.innerText = "You won!";
     } else {
+      winner = computer
       compScore++;
       document.getElementById("compScore").innerText = `Computer: ${compScore}`;
       return gameResults.innerText = "The computer won!";
@@ -50,3 +54,10 @@ function compareInputs(userChoice, compChoice) {
     }
   }
 };
+
+
+function currentMatch (userChoice, compChoice) {
+  if(winner = user){
+
+  }
+}
